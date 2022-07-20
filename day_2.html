@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day-2</title>
+    <style>
+        #nav{
+            width:100%;
+            height:60px;
+             display:flex; 
+             gap:15px; 
+             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+             /* border: 1px solid black; */
+             border-radius: 20px;
+        }
+       img{
+        height:28px;
+        margin-top: 5px;
+        padding-top: 10px;
+        margin-left: 145px;
+       }
+        .dropdown{
+            position: relative;
+            width:100px;
+            height: 40px;
+            padding-top: 20px;
+        }
+        .dropdown::before{
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            z-index: 100;
+            border: 2px solid black;
+            right:1px;
+            top:18px;
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+            transform: rotate(-45deg);
+            transition: 0.5s;
+            pointer-events: none;
+        }
+        .dropdown.active::before{
+            top:20px;
+            transform: rotate(-225deg);
+        }
+        .dropdown input{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            cursor:pointer;
+            border: 0px;
+            padding: 0px 10px;
+            border-radius: 10px;
+        }
+        .dropdown .option{
+            position: absolute;
+            top:70px;
+            width: 120%;
+            background-color: aqua;
+            box-shadow: 0 30px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+             display: none; 
+        }
+        .dropdown .option div{
+            padding: 12px 20px;
+            cursor: pointer;
+
+        }
+        .dropdown.active .option {
+            display: block;
+        }
+        .dropdown .option div:hover{
+            background-color: blue;
+            color: black;
+        }
+        .dropdown .option div icon-icon{
+            position: relative;
+            top:4px;
+            font-size: 1.2em;
+        }
+        #navsec{
+            display: flex;
+            font-size: 20px;
+            gap:20px;
+            margin-top: 15px;
+            margin-left: 600px;
+        }
+        #second{
+            width:80%;
+            margin: auto;
+            margin-top: 30px;
+            /* border: 1px solid; */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding-bottom: 20px;
+        }
+        #second>#first{
+            display: flex;
+            gap:20px;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding-bottom: 20px;
+             /* box-shadow: #727483;  */
+        }
+        #second>button{
+            background-color: #3662d8;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            width:180px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        #tick{
+            margin-top: 20px;
+        }
+        #btn{
+            margin: auto;
+            margin-top: 20px;
+        }
+        #third{
+            width:80%;
+            height: 50%;
+            margin: auto;
+          margin-top: 40px; 
+          border-radius: 20px;
+          /* border:2px solid red; */
+          display: flex;
+          justify-content: space-evenly;  
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+        }
+        #third>img{
+           
+            margin-top: -10px;
+           margin-left: -38px;
+            width: 400px;
+            height:100%;
+            border-radius: 20px 0px 0px 20px ;
+        }
+        #thirdin{
+           
+            width: 45%;
+            height: 40%;
+            line-height: 15px;
+        }
+        #phone{
+            display: flex;
+            justify-content: space-between;
+        }
+         #phone>input,button{
+            height: 48px;
+            width:175.337px; 
+            border: 1px solid #727483;
+            min-height: 48px;
+            box-sizing: border-box; 
+            text-align: center;
+            border-radius: 10px;
+            padding: 0.25rem 1rem;
+        } 
+        #phone>button{
+            background-color: #3662d8;
+            color: white;
+            font-size: 1rem;
+            line-height: 1.25rem;
+            min-block-size: 3rem; 
+            padding: 0.25rem 1rem;
+        }
+         #qr{
+          
+            justify-content:start;
+            flex-direction: row;
+        } 
+        
+        #qr>img{
+           
+            margin: auto;
+            width: 154px;
+            height:154px; 
+        }
+      
+        #qr>p{
+            text-align: center;
+            /* line-height: 4px; */
+            margin-top: 5%;
+            
+        }
+        #second>div:nth-child(1){
+            height: 48px;
+            width: 453px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <img src="https://www.expedia.co.in/_dms/header/logo.svg?locale=en_GB&siteid=27&2" alt="navimg">
+        
+        <div class="dropdown">
+            <input type="text" class="textBox" value="More travel">
+            <div class="option"> 
+                <div onclick="show('Stay')"><ion-icon name="home-outline"></ion-icon>Stay</div>
+                <div onclick="show('Flight')"><ion-icon name="airplane-outline"></ion-icon>Flight</div>
+                <div onclick="show('Cars')"><ion-icon name="car-outline"></ion-icon>Cars</div>
+                <div onclick="show('Package')"><ion-icon name="bag-outline"></ion-icon>Package</div>
+                <div onclick="show('Holiday_activities')" ><ion-icon name="albums-outline"></ion-icon>Holiday activities</div>
+                <div onclick="show('Deals')">Deals</div>
+                <div onclick="show('Groups & meetings')">Groups & meetings</div>
+                <div onclick="show('Mobile')">Mobile</div>
+            </div>
+        </div>
+        
+        <div id="navsec">
+        <div id="eng"><ion-icon name="globe-outline"></ion-icon>English</div>
+        <div>Supports</div>
+        <div>Trips</div>
+        <div>Sign in</div>
+        </div>
+    </div>
+    </div>
+
+    <div id="second">
+        <div id="first">
+            <h5>Stay</h5>
+            <h5>Flight</h5>
+            <h5>Cars</h5>
+            <h5>Package</h5>
+            <h5>Things to do</h5>
+        </div>
+        <div>
+            <input type="text" placeholder="Going to" style="height: 48px;width:453px;margin:0 0 0 48px;min-height:48px;border:1px solid #727483">
+            Check-in<input type="date" style="height:48px">
+            Check-out<input type="date"style="height:48px">
+            <input type="number" placeholder="Traveller"style="height: 48px;width:267px;border:1px solid #727483">
+
+        </div>
+        <div id="tick">
+            <input type="checkbox">Add to Flight
+            <input type="checkbox">Add a car
+        </div>
+        <button id="btn">Search</button>
+    </div>
+
+    <div id="third">
+        <img src="https://a.travel-assets.com/mad-service/footer/bnaBanners/BEX_ROME_iStock_72dpi.jpg" alt="">
+        <div id="thirdin">
+            <h1>Our app takes you further</h1>
+            <p>When you book on the app you can save up to 10% on select hotels while earning double the points with every booking. With these app deals you'll save even more on trips, and that means you can take more trips, and manage it all on the go.</p>
+            <h3>Text yourself a download link for easy access</h3>
+            <div id="phone">
+                <input type="" placeholder="Country code">
+                <input type="number" placeholder="Phone number">
+                <button>Get the app</button>
+            </div>
+            <p>By providing your number, you agree to receive a one-time automated text message with a link to get the app. Standard text message rates may apply.</p>
+        </div>
+        <div id="qr">
+       <img src="https://a.travel-assets.com/mad-service/qr-code/footer_qr_hp/27_QR_FOOTER_BNA_HP.png" alt="">
+       <p>Scan the QR code</p>
+        </div>
+    </div>
+</body>
+</html>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    function show(any){
+        document.querySelector(".textBox").value=any
+    }
+    let dropdown=document.querySelector(".dropdown");
+    dropdown.onclick=function(){
+        dropdown.classList.toggle("active");
+    }
+</script>
