@@ -5,199 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>day-2</title>
+    <link rel="stylesheet" href="day-2.css">
     <link rel="stylesheet" href="day-3.css">
-    <style>
-        #nav{
-            width:100%;
-            height:60px;
-             display:flex; 
-             gap:15px; 
-             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
-             /* border: 1px solid black; */
-             border-radius: 20px;
-        }
-       img{
-        height:28px;
-        margin-top: 5px;
-        padding-top: 10px;
-        margin-left: 145px;
-       }
-        .dropdown{
-            position: relative;
-            width:100px;
-            height: 40px;
-            padding-top: 20px;
-        }
-        .dropdown::before{
-            content: "";
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            z-index: 100;
-            border: 2px solid black;
-            right:1px;
-            top:18px;
-            border-top: 2px solid #fff;
-            border-right: 2px solid #fff;
-            transform: rotate(-45deg);
-            transition: 0.5s;
-            pointer-events: none;
-        }
-        .dropdown.active::before{
-            top:20px;
-            transform: rotate(-225deg);
-        }
-        .dropdown input{
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-            cursor:pointer;
-            border: 0px;
-            padding: 0px 10px;
-            border-radius: 10px;
-        }
-        .dropdown .option{
-            position: absolute;
-            top:70px;
-            width: 120%;
-            background-color: aqua;
-            box-shadow: 0 30px 30px rgba(0,0,0,0.05);
-            overflow: hidden;
-             display: none; 
-        }
-        .dropdown .option div{
-            padding: 12px 20px;
-            cursor: pointer;
-
-        }
-        .dropdown.active .option {
-            display: block;
-        }
-        .dropdown .option div:hover{
-            background-color: blue;
-            color: black;
-        }
-        .dropdown .option div icon-icon{
-            position: relative;
-            top:4px;
-            font-size: 1.2em;
-        }
-        #navsec{
-            display: flex;
-            font-size: 20px;
-            gap:20px;
-            margin-top: 15px;
-            margin-left: 600px;
-        }
-        #second{
-            width:80%;
-            margin: auto;
-            margin-top: 30px;
-            /* border: 1px solid; */
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            padding-bottom: 20px;
-        }
-        #second>#first{
-            display: flex;
-            gap:20px;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-            padding-bottom: 20px;
-             /* box-shadow: #727483;  */
-        }
-        #second>button{
-            background-color: #3662d8;
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            text-align: center;
-            width:180px;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-        #tick{
-            margin-top: 20px;
-        }
-        #btn{
-            margin: auto;
-            margin-top: 20px;
-        }
-        #third{
-            width:80%;
-            height: 50%;
-            margin: auto;
-          margin-top: 40px; 
-          border-radius: 20px;
-          /* border:2px solid red; */
-          display: flex;
-          justify-content: space-evenly;  
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
-        }
-        #third>img{
-           
-            margin-top: -10px;
-           margin-left: -38px;
-            width: 400px;
-            height:100%;
-            border-radius: 20px 0px 0px 20px ;
-        }
-        #thirdin{
-           
-            width: 45%;
-            height: 40%;
-            line-height: 15px;
-        }
-        #phone{
-            display: flex;
-            justify-content: space-between;
-        }
-         #phone>input,button{
-            height: 48px;
-            width:175.337px; 
-            border: 1px solid #727483;
-            min-height: 48px;
-            box-sizing: border-box; 
-            text-align: center;
-            border-radius: 10px;
-            padding: 0.25rem 1rem;
-        } 
-        #phone>button{
-            background-color: #3662d8;
-            color: white;
-            font-size: 1rem;
-            line-height: 1.25rem;
-            min-block-size: 3rem; 
-            padding: 0.25rem 1rem;
-        }
-         #qr{
-          
-            justify-content:start;
-            flex-direction: row;
-        } 
-        
-        #qr>img{
-           
-            margin: auto;
-            width: 154px;
-            height:154px; 
-        }
-      
-        #qr>p{
-            text-align: center;
-            /* line-height: 4px; */
-            margin-top: 5%;
-            
-        }
-        #second>div:nth-child(1){
-            height: 48px;
-            width: 453px;
-        }
-    </style>
 </head>
 <body>
     <div id="nav">
@@ -233,12 +42,13 @@
             <h5>Cars</h5>
             <h5>Package</h5>
             <h5>Things to do</h5>
+        
         </div>
         <div>
-            <input type="text" placeholder="Going to" style="height: 48px;width:453px;margin:0 0 0 48px;min-height:48px;border:1px solid #727483">
-            Check-in<input type="date" style="height:48px">
-            Check-out<input type="date"style="height:48px">
-            <input type="number" placeholder="Traveller"style="height: 48px;width:267px;border:1px solid #727483">
+            <input type="text" placeholder="Going to" style="height: 48px;width:453px;margin:0 0 0 48px;min-height:48px;border:1px solid #727483;border-radius: 10px;">
+            Check-in<input type="date" style="height:48px;border-radius: 10px;border:1px solid #727483;">
+            Check-out<input type="date"style="height:48px;border-radius: 10px;border:1px solid #727483;">
+            <input type="number" placeholder="Traveller"style="height: 48px;width:267px;border:1px solid #727483;border-radius: 10px;">
 
         </div>
         <div id="tick">
@@ -266,6 +76,89 @@
        <p>Scan the QR code</p>
         </div>
     </div>
+
+    <div id="fourth">
+        <img src="https://a.travel-assets.com/travel-assets-manager/cmct-5255/POSa-HP-Hero-D-928x398.jpg" alt="member">
+        <div id="text">
+            <h1>Save instantly with Expedia Rewards</h1>
+            <p>You can enjoy access to perks like Member Prices, saving you 10% or more on select hotels. Terms may apply.</p>
+            <button>See Member Prices</button>
+        </div>
+    </div>
+
+    <div id="fifth">
+            <img src="https://a.travel-assets.com/travel-assets-manager/gmvd-1482-bookearly-emea/667x320.jpg" alt="men img">
+            <div id="mentext">
+                <p>Plan ahed and Save</p>
+                <h5>Book 60 days in advance for 20% off select stays.</h5>
+            </div>
+    </div>
+    
+    <div id="sixth">
+        <p>Explore a world of travel with Expedia</p>
+        <p><a href="https://www.expedia.co.in/?pwaDialog=linksDialog-tab-group-1">Discover new places and experiences</a></p>
+    </div>
+
+    <div id="footermain">
+        <div id="footimage">
+            <img src="https://a.travel-assets.com/globalcontrols-service/content/f285fb631b0a976202ef57611c7050e9ef5ca51a/images/EG_Wordmark_blue_RGB.svg" alt="footimg">
+        </div>
+
+        <div>
+            <ul>
+                <li>Company</li>
+                <li><a href="">About us</a></li>
+                <li><a href="">Jobs</a></li>
+                <li><a href="">List your property</a></li>
+                <li><a href="">Partnerships</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+            <ul>
+                <li>Explore</li>
+                <li><a href="">India travel guide</a></li>
+                <li><a href="">Hotels in india</a></li>
+                <li><a href="">Holiday rental in india</a></li>
+                <li><a href="">Holiday packages in india</a></li>
+                <li><a href="">Domestic filghts</a></li>
+                <li><a href="">Car hire in india</a></li>
+                <li><a href="">all accommodation types</a></li>
+                <li><a href="">Travel blogs</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <ul>
+                <li>Policies</li>
+                <li><a href="">Privacy Statement</a></li>
+                <li><a href="">Terms of use</a></li>
+                <li><a href="">Vrbo terms and conditions</a></li>
+                <li><a href="">Partnerships</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <ul>
+                <li>Help</li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Change or cancel your booking</a></li>
+                <li><a href="">Refund process and timelines</a></li>
+                <li><a href="">Book a flight using an airline credit</a></li>
+                <li><a href="">International travel documents</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="securitysite">
+        <img src="https://images.trvl-media.com/media/content/expind/images/sg/secure.png" alt="">
+    </div>
+
+    <p>© 2022 Expedia, Inc., an Expedia Group company / Expedia Asia Holdings Mauritius / BEX Travel Asia Pte. Ltd. All rights reserved. Expedia and the Airplane Logo are trademarks or registered trademarks of Expedia, Inc.</p>
+    
+    <p> The End</p>
+
 </body>
 </html>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
