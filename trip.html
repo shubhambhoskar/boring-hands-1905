@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>day-2</title>
-    <link rel="stylesheet" href="day-2.css">
-    <link rel="stylesheet" href="day-3.css">
+    <title>Trips</title>
+    <link rel="stylesheet" href="trip.css">
 </head>
 <body>
     <div id="nav">
@@ -29,33 +28,22 @@
         <div id="navsec">
         <div id="eng"><ion-icon name="globe-outline"></ion-icon>English</div>
         <div>Supports</div>
-        <div><a href="trip.html">Trips</a></div>
+        <div>Trips</div>
         <div>Sign in</div>
         </div>
     </div>
     </div>
 
-    <div id="second">
-        <div id="first">
-            <h5>Stay</h5>
-            <h5>Flight</h5>
-            <h5>Cars</h5>
-            <h5>Package</h5>
-            <h5>Things to do</h5>
-        
+    <div id="sign">
+        <h2>Trips</h2>
+        <div id="lock">
+            <img src="https://a.travel-assets.com/egds/illustrations/uds-default/unlock__large.svg" alt="">
         </div>
-        <div>
-            <input type="text" placeholder="Going to" style="height: 48px;width:453px;margin:0 0 0 48px;min-height:48px;border:1px solid #727483;border-radius: 10px;">
-            Check-in<input type="date" style="height:48px;border-radius: 10px;border:1px solid #727483;">
-            Check-out<input type="date"style="height:48px;border-radius: 10px;border:1px solid #727483;">
-            <input type="number" placeholder="Traveller"style="height: 48px;width:267px;border:1px solid #727483;border-radius: 10px;">
-
+        <button id="button">Sign in or create free account</button>
+        <div id="account">
+            <p>Don't have an account?</p>
+            <p>Use your itineray number and email to find booking</p>
         </div>
-        <div id="tick">
-            <input type="checkbox">Add to Flight
-            <input type="checkbox">Add a car
-        </div>
-        <button id="btn">Search</button>
     </div>
 
     <div id="third">
@@ -72,31 +60,10 @@
             <p>By providing your number, you agree to receive a one-time automated text message with a link to get the app. Standard text message rates may apply.</p>
         </div>
         <div id="qr">
-       <img src="https://a.travel-assets.com/mad-service/qr-code/footer_qr_hp/27_QR_FOOTER_BNA_HP.png" alt="">
-       <p>Scan the QR code</p>
+            <img src="https://a.travel-assets.com/mad-service/qr-code/footer_qr_hp/27_QR_FOOTER_BNA_HP.png" alt="">
+            <p>Scan the QR </p>
+            <p>Code</p>
         </div>
-    </div>
-
-    <div id="fourth">
-        <img src="https://a.travel-assets.com/travel-assets-manager/cmct-5255/POSa-HP-Hero-D-928x398.jpg" alt="member">
-        <div id="text">
-            <h1>Save instantly with Expedia Rewards</h1>
-            <p>You can enjoy access to perks like Member Prices, saving you 10% or more on select hotels. Terms may apply.</p>
-            <button>See Member Prices</button>
-        </div>
-    </div>
-
-    <div id="fifth">
-            <img src="https://a.travel-assets.com/travel-assets-manager/gmvd-1482-bookearly-emea/667x320.jpg" alt="men img">
-            <div id="mentext">
-                <p>Plan ahed and Save</p>
-                <h5>Book 60 days in advance for 20% off select stays.</h5>
-            </div>
-    </div>
-    
-    <div id="sixth">
-        <p>Explore a world of travel with Expedia</p>
-        <p><a href="https://www.expedia.co.in/?pwaDialog=linksDialog-tab-group-1">Discover new places and experiences</a></p>
     </div>
 
     <div id="footermain">
@@ -156,20 +123,9 @@
     </div>
 
     <p>© 2022 Expedia, Inc., an Expedia Group company / Expedia Asia Holdings Mauritius / BEX Travel Asia Pte. Ltd. All rights reserved. Expedia and the Airplane Logo are trademarks or registered trademarks of Expedia, Inc.</p>
-    
-    <p> The End</p>
 
 </body>
 </html>
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-<script>
-    function show(any){
-        document.querySelector(".textBox").value=any
-    }
-    let dropdown=document.querySelector(".dropdown");
-    dropdown.onclick=function(){
-        dropdown.classList.toggle("active");
-    }
-</script>
