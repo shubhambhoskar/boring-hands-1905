@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login in</title>
+    <style>
+         body{
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+            font-family: Arial, Helvetica, sans-serif;
+    }
+        #navimage{
+            height: 48px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        #navimage>img {
+            width: 134.44px;
+            height: 30px;
+        }
+        #signin{
+            width:448px;
+            height:440px;
+            /* border: 1px solid; */
+            margin: auto;
+           
+       }
+        #signin>h1{
+            line-height: 10px;
+            margin-left: 10px;
+        }
+        #signin>input{
+            height: 48px;
+            width: 400px;
+            /* padding: 16px 12px 0 12px; */
+            border: 1px solid #727483;
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 20.571px;
+            border-radius: 10px;
+        }
+        #signin>input:last-child{
+            height: 20px;
+            width:400px;
+            border: 1px solid;
+        }
+       
+        #signincheck{
+            margin-left: 10px;
+            margin-top: 10px;
+            display: flex;
+            
+        }
+        #signincheck>input{
+            width: 20px;
+        }
+        #signincheck>input:hover{
+           border: 2px solid blue;
+        }
+        #signinbutton{
+            height: 48px;
+            width: 400px;
+            /* padding: 16px 12px 0 12px; */
+            border: 1px solid #727483;
+            margin-left: 20px;
+            /* margin-top: 20px; */
+            font-size: 16px;
+            line-height: 20.571px;
+            border-radius: 10px;
+            background-color: #3672BB;
+            color: white;
+        }
+
+        p{
+            font-size: 14px;
+        }
+        a{
+            text-decoration: none;
+        }
+       
+        form>p{
+            text-align: center;
+        }
+        
+        body>p{
+            text-align: center;
+            margin-top: 40px;
+        }
+        #icon{
+            width:126px;
+            height: 43.2px;
+            display: flex;
+            margin: auto;
+        }
+        #icon>img{ 
+            /* border: 1px solid; */
+            margin: auto;
+            height: 18px;
+            width: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navimage">
+        <img src="https://www.expedia.co.in/_dms/interstitial/logo.svg?locale=en_GB&siteid=27" alt="">
+    </div>
+    <form id="signin">
+        <h1>Sign in</h1>
+        <input id="email" type="email" placeholder="Email address">
+        <input id="passward" type="text"type="number" placeholder="Passward">
+            <div id="signincheck">
+                <input type="Checkbox">
+                <p>This is a public or shared device</p>
+            </div>
+        <p style="text-align:justify;width:400px;margin:20px">By signing in,I agree to the Expedia <a href="">Terms and Condition,Pricing Statement</a> and <a href="">Expedia Rewards Terms and Conditions.</a></p>
+        <button id="signinbutton">Sign in</button>
+
+        <p ><a href="">Forget password?</a></p>
+        <p >Don't have an account? <a href="sign.html">Create one</a></p>
+        
+    </form>
+    <p>or continue with</p>
+    <div id="icon">
+        <img src="https://img.icons8.com/material/344/mac-os.png" alt="">
+        <img src="https://img.icons8.com/color/72/facebook.png" alt="">
+        <img src="https://img.icons8.com/fluency/72/google-logo.png" alt="">
+    </div>
+        
+</body>
+</html>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    let form=document.querySelector("form")
+       form.addEventListener("submit",fff)
+      
+       let array=JSON.parse(localStorage.getItem("signupdata"));
+       console.log(array);
+      
+      
+
+    function fff(){
+      event.preventDefault();
+    let data={
+    
+      email:form.email.value,
+      passward:form.passward.value
+    }
+    
+   
+    }
+
+    document.querySelector("#signinbutton").addEventListener("click",check);
+       function check(){
+          for(let i=0;i<array.length;i++){
+              if(array[i].email==email || array[i].passward==passward){
+          alert("Login Successful");
+       }else{
+          alert("Login Unsuccessful");
+       }
+          }
+       
+       }
+</script>

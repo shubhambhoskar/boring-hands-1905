@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <style>
+        body{
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+            font-family: Arial, Helvetica, sans-serif;
+}
+        #navimage{
+            height: 48px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        #navimage>img {
+            width: 134.44px;
+            height: 30px;
+        }
+        #signin{
+            width:448px;
+            height:640px;
+            /* border: 1px solid; */
+            margin: auto; 
+       }
+        #signin>h1{
+            line-height: 10px;
+            margin-left: 10px;
+        }
+        #signin>input{
+            height: 48px;
+            width: 400px;
+            border: 1px solid #727483;
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 20.571px;
+            border-radius: 10px;
+        }
+        #signin>input:last-child{
+            height: 20px;
+            width:400px;
+            border: 1px solid;
+        }
+        #signincheck{
+            display: flex;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+        #signincheck>input{
+            width: 17.5px;
+        }
+        #signincheck>input:hover{
+           border: 2px solid blue;
+        }
+        #signincheck>p{
+            padding-left:9px;
+        }
+        #signinbutton{
+            height: 48px;
+            width: 400px;
+            border: 0px solid #727483;
+            margin-left: 25px;
+            font-size: 16px;
+            border-radius: 10px;
+            background-color: #3672BB;
+            color: white;
+        }
+
+        p{
+            font-size: 14px;
+        }
+        a{
+            text-decoration: none;
+        }
+       
+        form>p{
+            text-align: center;
+             padding-bottom: 10px;
+        }
+        
+        body>p{
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 10px; 
+        }
+        #signincheckin{
+            display: flex;
+            margin-top: -30px;
+            width:400px;
+            padding-left: 20px;
+        }
+        #signincheckin>input{
+            width: 25px;
+        }
+        #signincheckin>p{
+            padding-top:15px;
+            padding-left:10px;
+           
+        }
+        #signincheckin>input:hover{
+           border: 2px solid blue;
+        }
+        #icon{
+            width:126px;
+            height: 43.2px;
+            display: flex;
+            margin: auto;
+            
+        }
+        #icon>img{ 
+            /* border: 1px solid; */
+            margin: auto;
+            height: 18px;
+            width: 18px;
+        }
+        #signinbutton+p{
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="navimage">
+        <img src="https://www.expedia.co.in/_dms/interstitial/logo.svg?locale=en_GB&siteid=27" alt="">
+    </div>
+    <form id="signin">
+        <h1>Create an account</h1>
+        <input id="email" type="email" placeholder="Email address">
+        <input id="name" type="text" placeholder="First name">
+        <input id="surname" type="text" placeholder="Surname">
+        <input id="password" type="password" placeholder="Password">
+        <div id="signincheck">
+            <input type="Checkbox">
+            <p>This is a public or shared device</p>
+        </div>
+        <div id="signincheckin">
+            <input type="Checkbox">
+            <p>I'd like to receive travel deals, special offers and other information from Expedia via email.</p>
+        </div>
+        <p style="width:400px;text-align: justify;margin-left: 20px;">By creating an account,I agree to the Expedia <a href="">Terms and Condition,Pricing Statement</a> and <a href="">Expedia Rewards Terms and Conditions.</a></p>
+        <button id="signinbutton">Continue</button>
+        <p >Already have an account? <a href="login.html">sign in</a></p>
+        
+    </form>
+        <p>or continue with</p>
+        <div id="icon">
+            <img src="https://img.icons8.com/material/344/mac-os.png" alt="">
+            <img src="https://img.icons8.com/color/72/facebook.png" alt="">
+            <img src="https://img.icons8.com/fluency/72/google-logo.png" alt="">
+        </div>
+</body>
+</html>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    let form=document.querySelector("form");
+    form.addEventListener("submit",collect);
+
+let arr=[];
+console.log(arr);
+    function collect(){
+        event.preventDefault();
+        let obj={
+            email:form.email.value,
+            name:form.name.value,
+            surname:form.surname.value,
+            passward:form.password.value,
+        }
+        console.log(obj);
+        arr.push(obj);
+        localStorage.setItem("signupdata",JSON.stringify(arr));
+      window.location.href="login.html"
+    }
+</script>
