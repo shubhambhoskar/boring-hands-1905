@@ -112,7 +112,7 @@
     <form id="signin">
         <h1>Sign in</h1>
         <input id="email" type="email" placeholder="Email address">
-        <input id="passward" type="text"type="number" placeholder="Passward">
+        <input id="passward" type="text"type="number" placeholder="Password">
             <div id="signincheck">
                 <input type="Checkbox">
                 <p>This is a public or shared device</p>
@@ -140,31 +140,32 @@
     let form=document.querySelector("form")
        form.addEventListener("submit",fff)
       
-       let array=JSON.parse(localStorage.getItem("signupdata"));
+       let array=JSON.parse(localStorage.getItem("signupdata"))||[];
        console.log(array);
       
-      
-
     function fff(){
       event.preventDefault();
     let data={
-    
       email:form.email.value,
       passward:form.passward.value
     }
-    
-   
+    check(data.email,data.passward)
     }
 
-    document.querySelector("#signinbutton").addEventListener("click",check);
-       function check(){
-          for(let i=0;i<array.length;i++){
-              if(array[i].email==email || array[i].passward==passward){
-          alert("Login Successful");
-       }else{
-          alert("Login Unsuccessful");
-       }
-          }
-       
+    // document.querySelector("#signinbutton").addEventListener("submit",check);
+       function check(email,passward){
+          let flag=0;
+            for(let i=0;i<array.length;i++){
+            // console.log(array[i].email,email);
+              if(array[i].email===email && array[i].passward===passward){
+                flag=1;
+               
+            }
+        }
+            if(flag===1){
+            alert("Login Successful");
+            }else{
+            alert("Login Unsuccessful");
+            }
        }
 </script>
