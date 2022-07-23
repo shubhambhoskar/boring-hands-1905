@@ -56,7 +56,7 @@ margin-left: 145px;
 .dropdown .option{
     position: absolute;
     top:70px;
-    width: 120%;
+    width: 500px;
     background-color: aqua;
     box-shadow: 0 30px 30px rgba(0,0,0,0.05);
     overflow: hidden;
